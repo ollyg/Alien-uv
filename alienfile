@@ -13,7 +13,7 @@ share {
     # so install direct to the sharedir for Alien::uv
     # UV_INSTALL_DIR=%{alien.runtime.prefix} \
     [ q{ INSTALLER_NO_MODIFY_PATH=1 \
-           . %{alien.install.extract}/install.sh } ],
+           . %{alien.install.extract}/uv-installer.sh } ],
 
     # then copy back to blib so that .packlist gets files, and
     # allows use of File::ShareDir to locate binary cross-platform
