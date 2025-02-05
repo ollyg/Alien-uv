@@ -1,0 +1,26 @@
+use alienfile;
+
+# idiomatic way to make sure we always install/update?
+probe [ q{ sh -c 'exit 127' } ];
+ 
+share {
+  start_url 'https://astral.sh/uv/install.sh';
+  plugin 'Download';
+  plugin 'Extract::File';
+
+  build [
+    # uv is not relocateable as it heads files with an absolute shebang
+    # so install direct to the sharedir for Alien::uv
+    # UV_INSTALL_DIR=%{alien.runtime.prefix} \
+    [ q{ INSTALLER_NO_MODIFY_PATH=1 \
+           . %{alien.install.extract}/install.sh } ],
+
+    # then copy back to blib so that .packlist gets files, and
+    # allows use of File::ShareDir to locate binary cross-platform
+    # [ q{ cp -a %{alien.runtime.prefix}/bin     %{alien.install.prefix}/ } ],
+    # [ q{ cp -a %{alien.runtime.prefix}/venv    %{alien.install.prefix}/ } ],
+    # [ q{ cp -a %{alien.runtime.prefix}/VERSION %{alien.install.prefix}/ } ],
+  ];
+};
+
+# vim: set ft=perl:
