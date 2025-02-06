@@ -9,14 +9,9 @@ share {
   plugin 'Extract::File';
 
   build [
-    [ q{ mkdir -p %{alien.runtime.prefix}/bin } ],
+    [ q{ mkdir -p %{alien.install.prefix}/bin } ],
 
-    # install direct to the sharedir for Alien::uv
-    [ q{ INSTALLER_NO_MODIFY_PATH=1 UV_INSTALL_DIR=%{alien.runtime.prefix}/bin . %{alien.install.extract}/uv-installer.sh } ],
-
-    # then copy back to blib so that .packlist gets files, and
-    # allows use of File::ShareDir to locate binary cross-platform
-    [ q{ cp -a %{alien.runtime.prefix}/bin %{alien.install.prefix}/ } ],
+    [ q{ INSTALLER_NO_MODIFY_PATH=1 UV_INSTALL_DIR=%{alien.install.prefix}/bin . %{alien.install.extract}/uv-installer.sh } ],
   ];
 };
 
