@@ -1,4 +1,4 @@
-package Alien::uv;
+package Alien::ultraviolet;
  
 use strict;
 use warnings;
@@ -23,32 +23,38 @@ __END__
 
 =head1 NAME
 
-Alien::uv - Alien package for Python uv
+Alien::ultraviolet - Alien package for Python uv
 
 =cut
 
 =head1 SYNOPSIS
 
- use Alien::uv;
+ use Alien::ultraviolet;
  
  # the uv application
- say Alien::uv->uv;
+ say Alien::ultraviolet->uv;
 
 =head1 DESCRIPTION
 
-L<Alien::uv> downloads and installs uv.
+L<Alien::ultraviolet> downloads and installs uv.
 
 =head1 METHODS
 
 =head2 uv
 
- my $uv = Alien::uv->uv;
+ my $uv = Alien::ultraviolet->uv;
+
+Returns the absolute location of the uv application.
+
+=head2 uvx
+
+ my $uvx = Alien::ultraviolet->uvx;
 
 Returns the absolute location of the uv application.
 
 =head2 bin_dir
 
- my $bin_dir = Alien::uv->bin_dir;
+ my $bin_dir = Alien::ultraviolet->bin_dir;
 
 Returns the location of uv and other apps (local python, venv, etc).
 

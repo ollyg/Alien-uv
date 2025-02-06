@@ -5,9 +5,9 @@ my $abmm = Alien::Build::MM->new;
  
 WriteMakefile($abmm->mm_args(
   ABSTRACT           => 'Download and install uv',
-  DISTNAME           => 'Alien-uv',
-  NAME               => 'Alien::uv',
-  VERSION_FROM       => 'lib/Alien/uv.pm',
+  DISTNAME           => 'Alien-ultraviolet',
+  NAME               => 'Alien::ultraviolet',
+  VERSION_FROM       => 'lib/Alien/ultraviolet.pm',
   CONFIGURE_REQUIRES => {
     'Alien::Build' => '2.83', # Alien::Build::Plugin...
   },
