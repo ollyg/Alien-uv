@@ -43,7 +43,7 @@ Alien::ultraviolet - Alien package for Python uv
 
 L<Alien::ultraviolet> downloads and installs uv.
 
-However, setting C<ALIEN_INSTALL_TYPE=system> will force use of system uv.
+However, setting C<ALIEN_ULTRAVIOLET_INSTALL_TYPE=system> will force use of system uv.
 
 =head1 METHODS
 
