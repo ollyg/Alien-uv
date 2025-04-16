@@ -7,7 +7,7 @@ use parent qw( Alien::Base );
 use Path::Tiny;
 use File::ShareDir::Dist qw( dist_share );
 
-our $VERSION = '1.000000';
+our $VERSION = '1.001000';
 
 sub bin_dir { path( dist_share __PACKAGE__ )->child('bin') }
 

@@ -1,3 +1,9 @@
+1.001000 - 2025-04-16
+
+  [NEW FEATURES]
+
+  * support ALIEN_INSTALL_TYPE=system to force+assume use of system uv
+
 1.000000 - 2025-02-06
 
   [NEW FEATURES]
